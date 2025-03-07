@@ -1,0 +1,12 @@
+name: Fetch Charger Data Every 5 Minutes
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Render API to Fetch Data
+        run: curl -X GET https://uptime-app.onrender.com
